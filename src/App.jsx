@@ -6,6 +6,7 @@ import "./App.css";
 function App() {
   const [meal, setMeal] = useState(null);
   const [savedMeals, setSavedMeals] = useState([]);
+  const [winner, setWinner] = useState(null);
 
   const getRandomMeal = async () => {
     const res = await fetch(
@@ -16,9 +17,21 @@ function App() {
   };
 
   const saveMeal = () => {
+    if (!meal) return;
+
     if (!savedMeals.find((m) => m.idMeal === meal.idMeal)) {
       setSavedMeals([...savedMeals, meal]);
     }
+  };
+
+  const pickWinner = () => {
+    if (!savedMeals.length) return;
+
+    setWinner(null);
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * savedMeals.length);
+      setWinner(savedMeals[randomIndex]);
+    }, 800);
   };
 
   useEffect(() => {
@@ -39,6 +52,18 @@ function App() {
       {meal && <MealCard meal={meal} onSave={saveMeal} />}
 
       <SavedMeals meals={savedMeals} />
+
+      <button onClick={pickWinner} disabled={!savedMeals.length}>
+        Pick Final Dinner ❤️
+      </button>
+
+      {winner && (
+        <div className="winner-card">
+          <h2>Tonight’s Dinner 🎉</h2>
+          <h3>{winner.strMeal}</h3>
+          <img src={winner.strMealThumb} alt={winner.strMeal} />
+        </div>
+      )}
     </div>
   );
 }
