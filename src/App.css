@@ -6,6 +6,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-image: url(./assets/osckar-wallpaper-967837_1280.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 h1 {
