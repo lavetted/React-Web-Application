@@ -40,3 +40,17 @@ The application is structured using reusable React components and managed throug
   - Fetch side effects
 
   - Local storage persistence
+
+## 📸 Features
+
+- Generate a random dinner with one click
+
+- View meal name, image, cuisine, and category
+
+- Save favorite dinner options
+
+- Randomly select a final dinner from saved meals
+
+- Persistent saved list using localStorage
+
+- Responsive dark-themed UI
