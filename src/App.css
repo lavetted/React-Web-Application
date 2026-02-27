@@ -6,7 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url(./assets/osckar-wallpaper-967837_1280.jpg);
+  background-image: url(./assets/2147694061.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -18,6 +18,13 @@ h1 {
   transform: translateX(-50%);
   font-size: 36px;
   margin-bottom: 10px;
+  text-shadow: #111 0px 0px 20px;
+  text-transform: uppercase;
+  color: gold;
+}
+
+h2 {
+  text-shadow: #111 0px 0px 20px;
 }
 
 .App {

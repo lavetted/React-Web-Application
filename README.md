@@ -1,16 +1,42 @@
-# React + Vite
+# 🍽️ Date Night Dinner Picker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React web application that helps users decide what to eat by generating random dinner ideas and selecting a final winner from saved choices. Built as a Single Page Application using React hooks, external API data, and browser local storage.
 
-Currently, two official plugins are available:
+# 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+([My Netlify link here](https://datenight-dinner-picker.netlify.app/))
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# ▶️ How to Use
 
-## Expanding the ESLint configuration
+1. Click Pick Random Dinner
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Review the generated meal
+
+3. Click Save for Date Night to store options
+
+4. After saving multiple meals, click Pick Final Dinner
+
+5. The app randomly selects the dinner choice
+
+# 🧠 Application Approach
+
+The application is structured using reusable React components and managed through React state and lifecycle hooks.
+
+## Framework
+
+- App manages global state and API requests
+
+- MealCard displays the current meal
+
+- SavedMeals displays saved dinner options
+
+## State Management
+
+- useState for meals, saved list, and winner
+
+- useEffect for:
+
+  - Fetch side effects
+
+  - Local storage persistence
