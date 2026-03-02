@@ -7,6 +7,7 @@ function App() {
   const [meal, setMeal] = useState(null);
   const [savedMeals, setSavedMeals] = useState([]);
   const [winner, setWinner] = useState(null);
+  const [isResetting, setIsResetting] = useState(false);
 
   const getRandomMeal = async () => {
     const res = await fetch(
@@ -43,6 +44,18 @@ function App() {
     localStorage.setItem("dinnerChoices", JSON.stringify(savedMeals));
   }, [savedMeals]);
 
+  const resetApp = () => {
+    setIsResetting(true);
+
+    setTimeout(() => {
+      setMeal(null);
+      setSavedMeals([]);
+      setWinner(null);
+      localStorage.removeItem("dinnerChoices");
+      setIsResetting(false);
+    }, 400); // match CSS duration
+  };
+
   return (
     <div className="App">
       <h1>Date Night Dinner Picker 🍽️</h1>
@@ -64,6 +77,8 @@ function App() {
           <img src={winner.strMealThumb} alt={winner.strMeal} />
         </div>
       )}
+
+      <button onClick={resetApp}>Reset Choices 🔄</button>
     </div>
   );
 }

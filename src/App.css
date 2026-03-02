@@ -107,6 +107,30 @@ button:disabled {
   margin-top: 12px;
 }
 
+button:last-of-type {
+  background: #444;
+}
+
+button:last-of-type:hover {
+  background: #666;
+}
+
+/* fade out animation */
+.fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
 /* Smooth entrance */
 @keyframes fadeIn {
   from {

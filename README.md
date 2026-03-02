@@ -54,3 +54,21 @@ The application is structured using reusable React components and managed throug
 - Persistent saved list using localStorage
 
 - Responsive dark-themed UI
+
+## 🔄 Reset Application State
+
+The application includes a Reset button that clears all user selections and returns the interface to its initial state.
+
+When activated, the reset feature:
+
+- Removes all saved dinner choices
+
+- Clears the currently displayed meal
+
+- Removes the selected final winner
+
+- Deletes stored data from browser localStorage
+
+- Plays a smooth fade-out animation before clearing the UI
+
+This functionality ensures users can restart the decision-making process at any time without manually refreshing the page.
